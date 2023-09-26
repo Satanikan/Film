@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*{
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  background: rgb(94, 83, 83);
+}
+a{
+  text-decoration: none;
+  color: #ffff;
+}
+.main-header{
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px;
+
+  background: black;
+}
+.ul{
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+.signin-link{
+  display: flex;
+  gap: 40px;
+}
+.title{
+  position: relative;
+  right:  20px;
+}
+
+.links{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+
+}
+.ul-li{
+  list-style: none;
+}
+.search_box{
+  padding: 5px;
+  width: 300px;
+  position: relative;
+  border-radius: 10px;
+  background: rgb(54, 48, 48);
+}
+.search_box::placeholder{
+  color: #ffff;
+}
+.btn-sign{
+  width: 150px;
+  padding: 8px;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#f50 69.93%,#d6bb00);
+  border: none;
+
+}
+.btn-link{
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+.wrapper-home{
+  margin: 0 170px 0 170px;
+  background: #e7e0e0;
+  
+  padding: 35px;
+}
+.home_title{
+position: relative;
+bottom: 20px;
+right: 1px;
+color: #f50;
+}
+.title_p{
+  font-size: 22px;
+  margin-top: 10px;
+  border-bottom: 5px #f50;
+}
+
+.logo{
+  width: 700px;
+  height: 650px;
+  position: relative;
+  left: 750px;
+  bottom: 206px;
+  z-index: 111;
+  border-radius: 13px;
+}
+.history{
+  border-left:5px solid #f50 ;
+  font-size: 21px;
+  margin-left: 5px;
+  position: absolute;
+  top: 400px;
+  margin-top: 1px;
+}
+.serial-info{
+  position: relative;
+  bottom: 540px;
+  left: 10px;
+  font-size: 21px;
+}
+.hr{
+  margin-top: 50px;
+ height: 6px;
+ background: #f50 ;
+}
+
+.card-image{
+  width: 220px;
+  height: 356px;
+  border-radius: 7px;
+}
+.Cards{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+}
+.main-card{
+  margin: 20px;
+}
+.sezon{
+  color: #ffffff;
+  font-size: 20px;
+  position: relative;
+  right: 213px;
+  bottom: 13px;
+  background: #f50;
+  border-radius: 8px;
+  padding: 2px;
+}
+.main-sezon{
+  color: #f50;
+  font-size: 22px;
+  position: relative;
+  
+  bottom: -15px;
+  font-weight: 700;
+}
+.active{
+  color: red;
+  border-bottom:2px solid #d6bb00;
+}
+.main_section{
+  text-align: center;
+  width: 600px;
+  height: 100%;
+  border: 2px solid black;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
