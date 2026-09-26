@@ -25,6 +25,12 @@ export default function App() {
   return (
     <>
       <a className="skip-link" href="#main">Перейти к содержимому</a>
+      {import.meta.env.VITE_DEMO && (
+        <p className="demo-bar">
+          Демо-версия: видео, живой каталог и настоящий вход работают при запуске сайта на сервере.
+          Здесь аккаунт хранится только в вашем браузере, не вводите настоящий пароль.
+        </p>
+      )}
       <ScrollToTop />
       <Header />
       <main id="main" className="site-main">

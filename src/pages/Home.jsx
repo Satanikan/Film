@@ -11,7 +11,7 @@ const zombieClassics = FEATURED.filter((f) => f.genres.includes('Ужасы')).s
 const Home = () => (
   <>
     <section className="hero">
-      <img className="hero-bg" src={Banner} alt="" aria-hidden="true" />
+      {!import.meta.env.VITE_DEMO && <img className="hero-bg" src={Banner} alt="" aria-hidden="true" />}
       <div className="container hero-content">
         <p className="eyebrow">Фан-сайт и онлайн-кинотеатр</p>
         <h1 className="hero-title">Ходячие мертвецы</h1>

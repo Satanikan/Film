@@ -31,6 +31,7 @@ export default function CatalogPage({ category, intro }) {
   const [hasMore, setHasMore] = useState(false);
   const [total, setTotal] = useState(0);
   const [status, setStatus] = useState('loading');
+  const [error, setError] = useState('');
   const featured = FEATURED.filter((f) => f.category === category).map((f) => ({ ...f, featured: true }));
 
   useEffect(() => setDraft(q), [q]);
@@ -47,7 +48,9 @@ export default function CatalogPage({ category, intro }) {
         setStatus('ok');
       })
       .catch((err) => {
-        if (err.name !== 'AbortError') setStatus('error');
+        if (err.name === 'AbortError') return;
+        setError(err.message);
+        setStatus('error');
       });
     return () => ctrl.abort();
   }, [category, q, sort, page]);
@@ -100,8 +103,8 @@ export default function CatalogPage({ category, intro }) {
         {status === 'loading' && <SkeletonGrid />}
         {status === 'error' && (
           <div className="notice">
-            <p><strong>Каталог Internet Archive сейчас недоступен.</strong> Попробуйте обновить страницу чуть позже
-              или откройте коллекцию напрямую: <ExternalLink href={COLLECTION_URL[category]}>archive.org</ExternalLink></p>
+            <p><strong>{error || 'Каталог Internet Archive сейчас недоступен.'}</strong> Коллекцию можно открыть
+              напрямую: <ExternalLink href={COLLECTION_URL[category]}>archive.org</ExternalLink></p>
           </div>
         )}
         {(status === 'ok' || status === 'more') && items.length === 0 && (

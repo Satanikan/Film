@@ -1,13 +1,12 @@
+import { ApiError } from './apiError';
+import { demoApi } from './demoApi';
+
+export { ApiError };
+
 // Обёртка над fetch для нашего API. Cookie отправляются только на свой домен,
 // тело всегда JSON — сервер отклоняет другие форматы (защита от CSRF).
-export class ApiError extends Error {
-  constructor(message, status) {
-    super(message);
-    this.status = status;
-  }
-}
-
 export async function api(path, { method = 'GET', body, signal } = {}) {
+  if (import.meta.env.VITE_DEMO) return demoApi(path, { method, body });
   let res;
   try {
     res = await fetch(`/api${path}`, {
