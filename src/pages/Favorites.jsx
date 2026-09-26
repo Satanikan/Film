@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/links';
 import { MovieGrid } from '../Components/MovieCard';
 import { FEATURED_BY_ID } from '../data/catalog';
 import { useFavorites } from '../lib/favorites';

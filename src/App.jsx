@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import ErrorBoundary from './Components/ErrorBoundary';
 import Home from './pages/Home';
 import BestTitle from './pages/BestTitle';
 import Films from './pages/Films';
@@ -22,9 +23,11 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   return (
     <>
-      <a className="skip-link" href="#main">Перейти к содержимому</a>
+      {!import.meta.env.VITE_DEMO && <a className="skip-link" href="#main">Перейти к содержимому</a>}
       {import.meta.env.VITE_DEMO && (
         <p className="demo-bar">
           Демо-версия: видео, живой каталог и настоящий вход работают при запуске сайта на сервере.
@@ -34,6 +37,7 @@ export default function App() {
       <ScrollToTop />
       <Header />
       <main id="main" className="site-main">
+        <ErrorBoundary key={pathname} onReset={() => navigate('/')}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
@@ -49,6 +53,7 @@ export default function App() {
           <Route path="/sign" element={<Sign />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </ErrorBoundary>
       </main>
       <Footer />
     </>

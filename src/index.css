@@ -68,6 +68,10 @@ a {
   text-decoration: none;
 }
 
+a[role='link'] {
+  cursor: pointer;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from '../lib/links';
 import Player from '../Components/Player';
 import { MovieGrid } from '../Components/MovieCard';
 import ExternalLink from '../Components/ExternalLink';

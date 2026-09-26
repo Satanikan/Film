@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Link } from '../lib/links';
 import PasswordField from '../Components/PasswordField';
 import AntiPhishing from '../Components/AntiPhishing';
 import { useAuth } from '../lib/auth';

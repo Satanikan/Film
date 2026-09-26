@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, NavLink } from '../lib/links';
 import { useAuth } from '../lib/auth';
 import { useFavorites } from '../lib/favorites';
 import { CloseIcon, HeartIcon, MenuIcon, SearchIcon, UserIcon } from './Icons';

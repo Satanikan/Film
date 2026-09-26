@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/links';
 import Banner from '../Images/logo_2.jpg';
 import Data from '../Components/Data';
 import SeasonCard from '../Components/SeasonCard';
@@ -7,6 +7,11 @@ import { FEATURED } from '../data/catalog';
 import { PlayIcon } from '../Components/Icons';
 
 const zombieClassics = FEATURED.filter((f) => f.genres.includes('Ужасы')).slice(0, 6).map((f) => ({ ...f, featured: true }));
+
+const scrollToSeasons = (e) => {
+  e.preventDefault();
+  document.getElementById('seasons')?.scrollIntoView({ behavior: 'smooth' });
+};
 
 const Home = () => (
   <>
@@ -23,7 +28,8 @@ const Home = () => (
           <Link to="/watch/NightOfTheLivingDeadHD" className="btn btn-primary btn-lg">
             <PlayIcon size={18} /> Смотреть «Ночь живых мертвецов»
           </Link>
-          <a href="#seasons" className="btn btn-ghost btn-lg">Все сезоны</a>
+          <a href={import.meta.env.VITE_DEMO ? undefined : '#seasons'} role="link" tabIndex={0}
+            className="btn btn-ghost btn-lg" onClick={scrollToSeasons}>Все сезоны</a>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/links';
 import ExternalLink from './ExternalLink';
 import { ShieldIcon } from './Icons';
 
@@ -16,7 +16,11 @@ export default function Footer() {
         <nav className="footer-links" aria-label="Служебные ссылки">
           <Link to="/error">Сообщить об ошибке</Link>
           <Link to="/favorites">Избранное</Link>
-          <a href="/.well-known/security.txt">Сообщить об уязвимости</a>
+          {import.meta.env.VITE_DEMO ? (
+            <ExternalLink href="https://github.com/satanikan/film/security/advisories/new">Сообщить об уязвимости</ExternalLink>
+          ) : (
+            <a href="/.well-known/security.txt">Сообщить об уязвимости</a>
+          )}
         </nav>
         <p className="footer-safety">
           <ShieldIcon size={18} />

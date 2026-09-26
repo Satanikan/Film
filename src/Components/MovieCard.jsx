@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/links';
 import Poster from './Poster';
 import { HeartIcon, PlayIcon } from './Icons';
 import { useFavorites } from '../lib/favorites';
