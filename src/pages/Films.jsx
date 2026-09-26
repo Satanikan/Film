@@ -1,11 +1,10 @@
-import React from "react";
+import CatalogPage from '../Components/CatalogPage';
 
-const Films = () => {
-    return(
-        <div className="wrapper-home">
-       <p>Films</p>
-        </div>
-    )
-}
+const Films = () => (
+  <CatalogPage
+    category="films"
+    intro="Полнометражные фильмы, у которых истёк срок авторских прав. Смотрите целиком, бесплатно и без рекламы."
+  />
+);
 
 export default Films;

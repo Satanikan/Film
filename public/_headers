@@ -1,0 +1,10 @@
+# Заголовки безопасности для статического хостинга (Netlify, Cloudflare Pages).
+# При запуске через `npm start` те же заголовки выставляет Express-сервер.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://archive.org https://*.archive.org https://avatars.mds.yandex.net https://deadtv.ru; media-src 'self' https://archive.org https://*.archive.org; frame-src https://archive.org; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self "https://archive.org"), autoplay=(self "https://archive.org")

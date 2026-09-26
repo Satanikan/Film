@@ -1,11 +1,10 @@
-import React from "react";
+import CatalogPage from '../Components/CatalogPage';
 
-const Anime = () => {
-    return(
-        <div className="wrapper-home">
-       <p>Anime</p>
-        </div>
-    )
-}
+const Anime = () => (
+  <CatalogPage
+    category="animation"
+    intro="Классическая анимация в общественном достоянии: мультфильмы студий Флейшеров, Warner и других."
+  />
+);
 
 export default Anime;

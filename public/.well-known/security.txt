@@ -1,0 +1,4 @@
+# Нашли уязвимость? Сообщите приватно, не публикуя детали.
+Contact: https://github.com/satanikan/film/security/advisories/new
+Expires: 2027-09-01T00:00:00.000Z
+Preferred-Languages: ru, en

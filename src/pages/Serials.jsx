@@ -1,11 +1,10 @@
-import React from "react";
+import CatalogPage from '../Components/CatalogPage';
 
-const Serials = () => {
-    return(
-        <div className="wrapper-home">
-       <p>Serials</p>
-        </div>
-    )
-}
+const Serials = () => (
+  <CatalogPage
+    category="serials"
+    intro="Классические телесериалы и киносериалы, которые можно смотреть свободно."
+  />
+);
 
 export default Serials;
